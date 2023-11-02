@@ -1,0 +1,21 @@
+const fs = require('fs');
+
+fs.readFile('./aaa.txt', (err, data) => {
+    if (err) {
+        console.log('error read file!');
+        return;
+    }
+    console.log(data.toString()); // 123sad撒迪卢克213hhh
+    data[1] = 0x6d; // m
+    console.log(data.toString()); // 1m3sad撒迪卢克213hhh
+});
+
+
+fs.readFile('./test.png', (err, data) => {
+    console.log(data);
+    /**
+     * <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 
+     * 00 01 00 00 00 00 6e 08 06 00 00 00 c8 fb cd f8 00 00 00 01 
+     * 73 52 47 42 00 ae ce 1c e9 00 00 20 00 ... 19038 more bytes>
+     */
+})

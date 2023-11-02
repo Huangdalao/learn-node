@@ -1,0 +1,10 @@
+write by writeFile
+write by writeFile
+write by writeStream
+write by writeFile
+write by writeStream
+write by writeFile
+write by writeStream
+write by writeFile
+write by writeStream
+write end
