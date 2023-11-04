@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
     //     'Content-type': 'text/plain;charset=utf8;'
     // })
     // res.end('水岸东方'); 
-
+    console.log(req.url);
     res.writeHead('200', {
         'Content-type': 'application/json'
     })

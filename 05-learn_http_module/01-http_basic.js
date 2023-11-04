@@ -1,9 +1,9 @@
 const http = require('http');
 
 // 1.create a server
-const server = http.createServer((request, response) => {
+const server = http.createServer((req, res) => {
     // request  url/method/headers/params
-    response.end('hello world!')
+    res.end('hello world!')
 });
 
 // 2.start the server and set port

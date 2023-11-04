@@ -1,5 +1,5 @@
 const http = require('http');
-
+console.log(__dirname,__filename);
 // 1.create a server
 const server = http.createServer((request, response) => {
     // request  url/method/headers/params

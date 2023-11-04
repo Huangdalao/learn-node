@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload</title>
+</head>
+<body>
+    <input type="file" name="">
+    <button>上传</button>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        // import axios from './node_modules/axios/index.js'
+        console.log(axios,132);
+        const btn = document.querySelector('button')
+        btn.onclick = function(e) {
+            // 1、创建一个表单对象
+            const formData = new FormData();
+
+            // 2、存储上传文件信息
+            const inputEl = document.querySelector('input')
+            console.log(inputEl.files,inputEl.files[0]);
+            formData.set('image', inputEl.files[0])
+            
+            // // 3、发送请求
+            axios({
+                method:'post',
+                url: 'http://localhost:8080',
+                data: formData,
+                headers:{
+                    'Content-Type': 'multipart/form-data'
+                }
+            }).then(res => {
+                console.log(res);
+            }).catch(err => {
+                console.log(err)
+            })
+        }
+    </script>
+</body>
+</html>
