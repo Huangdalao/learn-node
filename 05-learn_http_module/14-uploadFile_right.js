@@ -21,8 +21,9 @@ const server = http.createServer((req, res) => {
 
         // action！！！  boundary's front and back will filled '--'
         const endIndex = result.indexOf(`--${boundary.trim()}--`);
-        result = result.slice(0, endIndex);
-        console.log(result);
+        // you should also use trim to delete space 
+        // or it will error
+        result = result.slice(0, endIndex).trim();
 
         // 3、save file
         // 3.1
