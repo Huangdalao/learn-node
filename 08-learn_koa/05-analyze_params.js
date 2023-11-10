@@ -27,7 +27,7 @@ userRouter.post('/json', (ctx, next) => {
     ctx.body = 'user json info';
 });
 
-userRouter.post('/urlencoded', multer, (ctx, next) => {
+userRouter.post('/urlencoded', (ctx, next) => {
     console.log(ctx.request.body);
     ctx.body = 'user urlencoded info';
 });
