@@ -2,6 +2,7 @@ const fs = require('fs');
 
 
 fs.readFile('./foo.txt', (err, data) => {
+    console.log(data);
     !err && console.log('read success');
     fs.writeFile('./foo_copy.txt', data, (err) => {
         if (err) {

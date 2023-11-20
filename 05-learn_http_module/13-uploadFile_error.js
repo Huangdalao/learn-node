@@ -13,18 +13,20 @@ const server = http.createServer((req, res) => {
     // so we can use writeStream to write
     // method 1
     // req.on('data', (data) => {
-    //     writeStream.write(data)
-    // });
-    // method 2
-    req.pipe(writeStream)
-
     /**
      * 
         <Buffer 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 
         2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 39 39 33 
         36 32 33 39 37 37 31 39 39 31 30 38 38 39 33 38 39 31 33
          ... 228 more bytes>
-     */
+    */
+    // console.log(data)
+    //     writeStream.write(data)
+    // });
+    // method 2
+    req.pipe(writeStream)
+
+    
 
     req.on('end', () => {
         res.end('file upload success!');
